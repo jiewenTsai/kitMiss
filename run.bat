@@ -86,7 +86,7 @@ echo.
 echo 首次執行會自動安裝缺少的套件，請稍候…
 echo.
 
-call "!RSCRIPT!" "%~dp0run_launcher.R" "%~dp0"
+call "!RSCRIPT!" "%~dp0run_launcher.R" "%~dp0."
 if errorlevel 1 (
   echo.
   echo [錯誤] 啟動失敗。
