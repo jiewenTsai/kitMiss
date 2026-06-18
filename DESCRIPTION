@@ -1,0 +1,23 @@
+Package: kitMiss
+Title: KIT Missing Data Mechanism Testing Tool (PKLM / RBtest)
+Version: 0.1.0
+Authors@R: person("KIT", "Research Tool", email = "kit@example.com", role = c("aut", "cre"))
+Description: Shiny application for cleaning multi-wave survey data and testing
+    missing data mechanisms via RBtest (regression-based) and PKLMtest
+    (projection-kernel-based MCAR test). Launch with run_kitmiss().
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports:
+    bslib,
+    caret,
+    dplyr,
+    ggplot2,
+    haven,
+    naniar,
+    PKLMtest,
+    RBtest,
+    readr,
+    shiny,
+    tibble,
+    tools

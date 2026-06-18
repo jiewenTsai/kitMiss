@@ -1,0 +1,12 @@
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+*.Rproj
+*.Rproj.user
+.DS_Store
+/doc/
+/Meta/
+*.tar.gz
+renv/library/
+renv/staging/
