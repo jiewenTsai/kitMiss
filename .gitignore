@@ -10,3 +10,4 @@
 *.tar.gz
 renv/library/
 renv/staging/
+kitmiss_log.txt
