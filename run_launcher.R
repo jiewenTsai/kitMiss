@@ -16,9 +16,16 @@ log_msg <- function(...) {
 get_project_root <- function() {
   args <- commandArgs(trailingOnly = TRUE)
   if (length(args) >= 1 && nzchar(args[1])) {
-    return(normalizePath(args[1], winslash = "/", mustWork = TRUE))
+    # 移除首尾引號與尾端反斜線／斜線（%~dp0 的常見問題）
+    p <- args[1]
+    p <- gsub('^"+|"+$', "", p)
+    p <- gsub('[/\\\\]+$', "", p)
+    return(normalizePath(p, winslash = "/", mustWork = TRUE))
   }
-  file_arg <- sub("^--file=", "", commandArgs(trailingOnly = FALSE)[grep("^--file=", commandArgs(trailingOnly = FALSE))])
+  file_arg <- sub(
+    "^--file=", "",
+    commandArgs(trailingOnly = FALSE)[grep("^--file=", commandArgs(trailingOnly = FALSE))]
+  )
   if (length(file_arg) >= 1 && nzchar(file_arg[1])) {
     return(dirname(normalizePath(file_arg[1], winslash = "/")))
   }
